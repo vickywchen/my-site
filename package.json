@@ -1,0 +1,7 @@
+{
+  "name": "my-site",
+  "private": true,
+  "scripts": {
+    "build": "bash scripts/build-pages.sh"
+  }
+}

@@ -2,3 +2,6 @@
 .DS_Store
 **/.DS_Store
 media/projects/recipe-camera/comp-1.original.mp4
+dist/
+node_modules/
+.wrangler/
