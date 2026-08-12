@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <script>
+    (function () {
+        var p = location.pathname;
+        var base = (p === "/my-site" || p.indexOf("/my-site/") === 0) ? "/my-site/" : "/";
+        document.write('<base href="' + base + '">');
+    })();
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — Vicky Chen</title>
+    <link rel="stylesheet" href="css/style.css?v=83">
+</head>
+<body>
+
+    <div id="site-header"></div>
+    <script src="js/load-header.js?v=3" defer></script>
+
+    <main class="about">
+        <section class="about-intro" data-name="Intro">
+            <div class="about-feature" data-name="Feature">
+                <div class="about-feature__inner">
+                    <div class="about-feature__image" data-name="Image">
+                        <img src="images/about/portrait.jpg" alt="Portrait of Vicky Chen." />
+                    </div>
+                    <div class="about-feature__text" data-name="Text">
+                        <p>Hey, I&rsquo;m Vicky! At heart, I love making, whether that be (personal) websites, computational models, or art.</p>
+                        <p>Currently, I&rsquo;m at MIT studying neuroscience and computer science, and minoring in design.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

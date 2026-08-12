@@ -1,0 +1,3 @@
+/* Deprecated: use /css/style.css
+   Kept as a shim so older cached HTML links still resolve. */
+@import url("./css/style.css");

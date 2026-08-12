@@ -1,0 +1,117 @@
+/* —— About page —— */
+.about {
+    width: 100%;
+}
+
+.about-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-height: calc(100svh - 72px);
+    box-sizing: border-box;
+}
+
+.about-feature {
+    width: 100%;
+}
+
+.about-feature__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap-split);
+    width: 100%;
+    max-width: 44rem;
+    margin-inline: auto;
+    padding: 44px var(--page-gutter);
+    box-sizing: border-box;
+}
+
+.about-feature__image {
+    position: relative;
+    width: min(300px, 78vw);
+    aspect-ratio: 252 / 276;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.about-feature__image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    pointer-events: none;
+}
+
+.about-feature__text {
+    max-width: 26rem;
+    width: 100%;
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 1.45;
+    letter-spacing: -0.1px;
+    color: var(--color-muted);
+    text-align: center;
+    word-break: break-word;
+}
+
+.about-feature__text p {
+    margin: 0;
+}
+
+.about-feature__text p + p {
+    margin-top: 1.45em;
+}
+
+/* Wide enough for a comfortable side-by-side pair */
+@media (min-width: 960px) {
+    .about-intro {
+        min-height: calc(100svh - 86px);
+    }
+
+    .about-feature__inner {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(40px, 5vw, 64px);
+        max-width: min(58rem, 92vw);
+        padding: var(--space-7) var(--page-gutter);
+    }
+
+    .about-feature__image {
+        width: clamp(280px, 26vw, 380px);
+        aspect-ratio: 228 / 252;
+    }
+
+    .about-feature__text {
+        flex: 1 1 0;
+        min-width: 0;
+        max-width: 28rem;
+        width: auto;
+        text-align: left;
+        font-size: clamp(1.2rem, 1rem + 0.4vw, 1.45rem);
+    }
+}
+
+/* Desktop: 1280px+ */
+@media (min-width: 1280px) {
+    .about-feature__inner {
+        gap: var(--gap-split-lg);
+        max-width: min(62rem, 90vw);
+        padding: var(--space-7) var(--page-gutter-hero);
+    }
+
+    .about-feature__image {
+        width: clamp(340px, 22vw, 420px);
+        aspect-ratio: 310 / 341;
+    }
+
+    .about-feature__text {
+        max-width: 28rem;
+        font-size: clamp(1.3rem, 1.05rem + 0.35vw, 1.55rem);
+    }
+}

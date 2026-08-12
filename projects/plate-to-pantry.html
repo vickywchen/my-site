@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <script>
+    (function () {
+        var p = location.pathname;
+        var base = (p === "/my-site" || p.indexOf("/my-site/") === 0) ? "/my-site/" : "/";
+        document.write('<base href="' + base + '">');
+    })();
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantry to Plate: Recipe Camera — Vicky Chen</title>
+    <link rel="stylesheet" href="css/style.css?v=95">
+</head>
+<body>
+
+    <div id="site-header"></div>
+    <script src="js/load-header.js?v=3" defer></script>
+
+    <main class="project recipe-camera">
+        <header class="project-hero">
+            <h1 class="project-hero__title">Pantry to Plate: Recipe Camera</h1>
+        </header>
+
+        <section class="recipe-intro" aria-labelledby="project-intro-heading">
+            <div class="recipe-intro__content">
+                <div class="recipe-intro__meta">
+                    <p class="recipe-meta">for 4.031 &mdash; Objects and Interaction</p>
+                    <p class="recipe-meta">with Kayla Han and Jocelyn Pak</p>
+                    <h2 class="recipe-tagline" id="project-intro-heading">How can we reimagine the digital camera?</h2>
+                </div>
+                <p class="project-body recipe-intro__body">Pantry to Plate is a kitchen assistant that turns a photo of your ingredients into a complete recipe.</p>
+                <figure class="project-figure recipe-spread">
+                    <video
+                        class="recipe-spread__video"
+                        src="media/projects/recipe-camera/comp-1.mp4"
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        webkit-playsinline
+                        preload="auto"
+                        aria-label="Physical interaction demo of the recipe camera."
+                    ></video>
+                </figure>
+            </div>
+            <figure class="recipe-hand">
+                <div class="recipe-hand__frame">
+                    <img src="media/projects/recipe-camera/hand.png?v=2" alt="Hand holding the recipe camera." class="recipe-hand__img" />
+                </div>
+            </figure>
+        </section>
+
+        <div class="project-blocks">
+            <section class="project-block project-block--split recipe-physical">
+                <div class="project-block__text">
+                    <p class="project-body">The user experience is designed around <strong>physical interaction</strong>, inspired by common actions in cooking — pressing a timer, shaking a pan, twisting a lid. A side-mounted button captures an image of the ingredients, shaking the device generates a different recipe, and twisting the top resets the system to start over.</p>
+                </div>
+                <figure class="project-figure recipe-physical__media">
+                    <img src="media/projects/recipe-camera/spread.png" alt="Ingredients spread for the recipe camera." />
+                </figure>
+            </section>
+
+            <section class="project-block project-block--split recipe-cad-row">
+                <figure class="project-figure recipe-cad recipe-caption-start">
+                    <div class="recipe-cad__crop">
+                        <img src="media/projects/recipe-camera/2dCAD.png" alt="CAD diagram of the camera body." class="recipe-cad__img" />
+                    </div>
+                    <figcaption class="project-caption">CAD diagram of the body</figcaption>
+                </figure>
+                <div class="project-block__text">
+                    <p class="project-body">The enclosure combines a 3D-printed PLA body with a wooden top cap, designed with a slide-fit mechanism for easy assembly and disassembly.</p>
+                </div>
+            </section>
+
+            <section
+                class="project-block recipe-bleed recipe-render-scrub"
+                data-render-scrub
+                data-frame-count="127"
+                data-frame-base="media/projects/recipe-camera/render-frames/frame-"
+            >
+                <div class="recipe-render-scrub__sticky">
+                    <div class="recipe-render__crop">
+                        <img
+                            class="recipe-render__frame"
+                            src="media/projects/recipe-camera/render-frames/frame-001.jpg"
+                            alt="Exploded rendering of the recipe camera."
+                            width="1812"
+                            height="1024"
+                            decoding="async"
+                            draggable="false"
+                        />
+                    </div>
+                </div>
+            </section>
+            <p class="project-caption recipe-render-scrub__caption">Exploded rendering of the device</p>
+
+            <section class="project-block project-block--split">
+                <div class="project-block__text">
+                    <p class="project-body">On the hardware side, the device is built around an Arduino Uno, with inputs from physical controls such as a potentiometer for the turning mechanism and tilt switches to detect the shaking triggers.</p>
+                </div>
+                <figure class="project-figure recipe-figure recipe-caption-end">
+                    <img src="media/projects/recipe-camera/wiring.png" alt="Electronics wiring prototype on a breadboard." />
+                    <figcaption class="project-caption">Electronics wiring prototyping</figcaption>
+                </figure>
+            </section>
+
+            <section class="project-block recipe-software">
+                <p class="project-body recipe-software__body">
+                    A camera loop continuously streams frames using OpenCV, while a serial connection to the Arduino listens for physical inputs to trigger state transitions. When a capture event occurs, the system sends the image to a vision-language model to extract the ingredients. That output is then passed into a second model that generates a recipe, including steps and a prompt for image generation. A diffusion model is used to synthesize a corresponding food image. View my code repository <a href="https://github.com/vickywchen/recipe-camera" target="_blank" rel="noopener noreferrer">here</a>.
+                </p>
+                <div class="recipe-software-grid">
+                    <div class="project-block__text recipe-ui-text">
+                        <p class="project-body">The UI is designed to be easy to navigate without on-screen controls, since all interaction happens through physical interactions.</p>
+                    </div>
+                    <figure class="project-figure recipe-ui recipe-caption-start">
+                        <div class="recipe-ui-grid">
+                            <img src="media/projects/recipe-camera/ui2.png" alt="Recipe camera screen showing finding recipes." />
+                            <img src="media/projects/recipe-camera/ui1.png" alt="Recipe camera screen showing Apple and Prickly Pear Salad." />
+                        </div>
+                        <figcaption class="project-caption">Examples of the screen UI</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section class="project-block recipe-gallery" aria-label="Photo dump">
+                <div class="recipe-gallery__collage">
+                    <figure class="project-figure recipe-gallery__loading">
+                        <img src="media/projects/recipe-camera/loading.gif" alt="Recipe camera loading screen animation." />
+                    </figure>
+                    <figure class="project-figure recipe-gallery__full">
+                        <img src="media/projects/recipe-camera/full_2.png" alt="Full view of the assembled recipe camera." />
+                    </figure>
+                    <figure class="project-figure recipe-gallery__parts">
+                        <img src="media/projects/recipe-camera/parts.png" alt="Disassembled parts of the recipe camera." />
+                    </figure>
+                    <figure class="project-figure recipe-gallery__sketch">
+                        <img src="media/projects/recipe-camera/sketch.png" alt="Early sketch scan of the recipe camera." />
+                    </figure>
+                </div>
+                <figure class="project-figure recipe-gallery__back">
+                    <img src="media/projects/recipe-camera/IMG_6477.jpg?v=2" alt="Back of the recipe camera enclosure showing ports and speaker." />
+                </figure>
+                <figure class="project-figure recipe-gallery__cardboard">
+                    <img src="media/projects/recipe-camera/IMG_6478.jpg?v=2" alt="Cardboard and tape form study of the recipe camera body." />
+                </figure>
+                <figure class="project-figure recipe-gallery__hood">
+                    <img src="media/projects/recipe-camera/IMG_6481.jpg?v=2" alt="Black 3D-printed viewfinder hood for the recipe camera." />
+                </figure>
+                <figure class="project-figure recipe-gallery__cap">
+                    <img src="media/projects/recipe-camera/top_close.png?v=2" alt="Close-up of the recipe camera top and controls." />
+                </figure>
+            </section>
+
+            <p class="project-stub__back recipe-back"><a href="work.html">&larr; Back to work</a></p>
+        </div>
+    </main>
+
+    <script src="js/scroll-scrub-render.js?v=11" defer></script>
+    <script src="js/autoplay-loop.js?v=1" defer></script>
+</body>
+</html>

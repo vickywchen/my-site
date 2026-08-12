@@ -1,0 +1,516 @@
+/* Microview / Analog Microscope Camera — dark theme, shared tokens */
+
+body:has(.microscope) {
+    --color-bg: #000;
+    --color-text: #fff;
+    --color-muted: rgba(255, 255, 255, 0.72);
+    --color-caption: rgba(255, 255, 255, 0.5);
+    --color-placeholder: rgba(255, 255, 255, 0.08);
+    background: #000;
+    overflow-x: hidden;
+}
+
+body:has(.microscope) .site-header {
+    background: #000;
+    color: #fff;
+}
+
+body:has(.microscope) .site-header__brand,
+body:has(.microscope) .site-nav__link {
+    color: #fff;
+}
+
+body:has(.microscope) .site-nav__not-work--mobile {
+    color: #fff;
+}
+
+body:has(.microscope) .site-nav__center-label-wrap .site-nav__not-work {
+    color: #000;
+}
+
+.microscope {
+    --color-bg: #000;
+    --color-text: #fff;
+    --color-muted: rgba(255, 255, 255, 0.72);
+    --color-caption: rgba(255, 255, 255, 0.5);
+    --color-placeholder: rgba(255, 255, 255, 0.08);
+    background: var(--color-bg);
+    color: var(--color-text);
+    overflow: visible;
+}
+
+.microscope .project-hero__title,
+.microscope .project-body,
+.microscope .project-body strong,
+.microscope .project-stub__back a {
+    color: var(--color-text);
+}
+
+.microscope .project-body,
+.microscope .project-body strong {
+    color: var(--color-muted);
+}
+
+.microscope-hero {
+    align-items: stretch;
+    gap: var(--space-1);
+    padding-top: var(--space-3);
+    padding-bottom: 0;
+}
+
+.microscope-hero .project-hero__title {
+    max-width: min(56rem, 100%);
+    align-self: center;
+}
+
+.microscope-hero__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    align-items: flex-end;
+    width: 100%;
+    max-width: min(72rem, 100%);
+    margin-inline: auto;
+    padding-right: 0;
+    text-align: right;
+}
+
+.microscope-meta {
+    margin: 0;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: var(--text-meta-size);
+    line-height: var(--text-meta-lh);
+    letter-spacing: var(--text-meta-tracking);
+    color: var(--color-text);
+}
+
+.microscope-intro {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--gap-stack);
+    align-items: start;
+    padding: var(--space-3) var(--page-gutter-wide) var(--space-7);
+    box-sizing: border-box;
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+    overflow: visible;
+    position: relative;
+    z-index: 0;
+}
+
+.microscope .project-blocks {
+    position: relative;
+    z-index: 1;
+}
+
+.microscope-intro__left {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    min-width: 0;
+    align-self: start;
+    position: relative;
+    z-index: 2;
+}
+
+.microscope-intro__hero {
+    width: min(100%, 36rem);
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.microscope-intro__right {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    min-width: 0;
+    position: relative;
+    align-self: start;
+    /* no isolation — let casing/text z-index compete with accent across columns */
+}
+
+.microscope-intro__casing {
+    max-width: 34rem;
+    color: rgba(255, 255, 255, 0.88);
+    align-self: end;
+    position: relative;
+    z-index: 3;
+}
+
+.microscope-tagline {
+    margin: 0;
+    width: 100%;
+    max-width: 11em;
+    font-family: var(--font-display);
+    font-weight: 200;
+    font-size: clamp(2.5rem, 5.5vw, 3.25rem);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: var(--color-text);
+    text-align: right;
+    position: relative;
+    z-index: 3;
+}
+
+.microscope-intro__body {
+    max-width: 24rem;
+    color: rgba(255, 255, 255, 0.88);
+    position: relative;
+    z-index: 3;
+}
+
+.microscope-intro__accent {
+    width: min(100%, 38rem);
+    align-self: end;
+    position: relative;
+    z-index: 0;
+    margin-top: calc(var(--space-5) * -1);
+    /* Stay behind every later page section when it bleeds down */
+    isolation: isolate;
+}
+
+.microscope-full {
+    max-width: none;
+    width: 100%;
+    padding-top: var(--space-3);
+    padding-left: var(--page-gutter);
+    padding-right: var(--page-gutter);
+}
+
+.microscope-full .project-figure {
+    width: 100%;
+    max-width: min(90rem, 100%);
+    margin-inline: auto;
+}
+
+.microscope-focus__media,
+.microscope-focus__video {
+    width: 100%;
+    display: block;
+}
+
+.microscope-focus__video {
+    height: auto;
+    background: #111;
+}
+
+.microscope-cad {
+    position: relative;
+    max-width: none !important;
+    width: 100%;
+    color: #000;
+    padding: clamp(40px, 5vw, 72px) var(--page-gutter);
+    z-index: 1;
+}
+
+.microscope-cad::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(50% - 50vw);
+    width: 100vw;
+    background: #fff;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.microscope-cad__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--gap-split);
+    width: 100%;
+    max-width: min(96rem, 100%);
+    margin-inline: auto;
+}
+
+.microscope-cad__item {
+    background: #fff;
+}
+
+.microscope-cad__item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.microscope-cad__caption {
+    margin-top: var(--space-3);
+    max-width: min(96rem, 100%);
+    margin-inline: auto;
+    color: rgba(0, 0, 0, 0.45);
+}
+
+.microscope-pieces .project-figure,
+.microscope-capture .project-figure {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.microscope-pieces .project-caption {
+    text-align: right;
+    width: 100%;
+}
+
+.microscope-prints {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-split);
+    max-width: none;
+    width: 100%;
+    padding-left: var(--page-gutter);
+    padding-right: var(--page-gutter);
+}
+
+.microscope-prints__wide {
+    width: 100%;
+    max-width: min(90rem, 100%);
+    margin-inline: auto;
+}
+
+.microscope-back {
+    margin: var(--space-5) var(--page-gutter-wide) var(--section-pad-y-end);
+}
+
+.microscope-back a:hover,
+.microscope-back a:focus-visible {
+    opacity: 0.75;
+}
+
+@media (min-width: 800px) {
+    .microscope-intro {
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        column-gap: clamp(28px, 4.5vw, 64px);
+        row-gap: 0;
+        padding: 0 0 var(--space-4) var(--page-gutter-wide);
+        align-items: start;
+        overflow: visible;
+    }
+
+    .microscope-intro__left {
+        gap: var(--space-5);
+        max-width: 36rem;
+    }
+
+    .microscope-intro__hero {
+        width: 100%;
+        max-width: none;
+        margin-top: calc(var(--space-5) * -1);
+    }
+
+    .microscope-intro__casing {
+        max-width: 32rem;
+        align-self: end;
+    }
+
+    .microscope-intro__right {
+        gap: var(--space-4);
+        padding-top: clamp(72px, 11vw, 140px);
+        padding-right: 0;
+        align-items: flex-start;
+    }
+
+    /* Tagline wider; inspired copy narrower; same right edge */
+    .microscope-tagline {
+        width: min(100%, 30rem);
+        max-width: 30rem;
+        text-align: right;
+        box-sizing: border-box;
+    }
+
+    .microscope-intro__body {
+        width: min(100%, 23rem);
+        max-width: 23rem;
+        margin-left: 7rem;
+        position: relative;
+        z-index: 2;
+        box-sizing: border-box;
+    }
+
+    .microscope-intro__accent {
+        /* Regular desktop: grows steadily with viewport */
+        width: clamp(36rem, 28rem + 12vw, 46rem);
+        max-width: none;
+        align-self: end;
+        margin-top: calc(-6.5rem - 2vw);
+        margin-right: -6vw;
+        z-index: 0;
+    }
+
+    /* Narrow text column + wide media so less-wide copy doesn't leave a center void */
+    .microscope-pieces {
+        grid-template-columns: minmax(18rem, 0.42fr) minmax(0, 0.58fr);
+        gap: var(--gap-split);
+        align-items: center;
+    }
+
+    .microscope-focus,
+    .microscope-capture {
+        grid-template-columns: minmax(0, 0.58fr) minmax(18rem, 0.42fr);
+        gap: var(--gap-split);
+        align-items: center;
+    }
+
+    .microscope-pieces .project-block__text,
+    .microscope-focus .project-block__text,
+    .microscope-capture .project-block__text {
+        max-width: none;
+        width: 100%;
+    }
+
+    .microscope-cad__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(24px, 3vw, 48px);
+        max-width: min(100rem, 100%);
+    }
+
+    .microscope-full {
+        padding-top: var(--space-2);
+    }
+}
+
+@media (min-width: 1280px) {
+    .microscope-hero {
+        padding-top: var(--space-4);
+        padding-bottom: 0;
+    }
+
+    .microscope-hero__meta {
+        max-width: min(80rem, 100%);
+        padding-right: var(--page-gutter-wide);
+    }
+
+    .microscope-intro {
+        padding-left: var(--content-pad);
+        column-gap: clamp(40px, 5vw, 88px);
+        grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    }
+
+    .microscope-intro__hero {
+        max-width: none;
+        margin-top: calc(var(--space-7) * -1);
+    }
+
+    .microscope-intro__left {
+        max-width: 42rem;
+    }
+
+    .microscope-intro__casing {
+        max-width: 36rem;
+        align-self: end;
+    }
+
+    .microscope-intro__right {
+        padding-top: clamp(96px, 10vw, 168px);
+    }
+
+    .microscope-tagline {
+        width: min(100%, 32rem);
+        max-width: 32rem;
+        font-size: clamp(3rem, 3.4vw, 3.5rem);
+    }
+
+    .microscope-intro__body {
+        width: min(100%, 24rem);
+        max-width: 24rem;
+        margin-left: 8rem;
+    }
+
+    .microscope-pieces {
+        grid-template-columns: minmax(22rem, 0.46fr) minmax(0, 0.54fr);
+    }
+
+    .microscope-focus,
+    .microscope-capture {
+        grid-template-columns: minmax(0, 0.54fr) minmax(22rem, 0.46fr);
+    }
+
+    .microscope-full,
+    .microscope-prints {
+        padding-left: var(--page-gutter-wide);
+        padding-right: var(--page-gutter-wide);
+    }
+
+    .microscope-full {
+        padding-top: var(--space-2);
+    }
+
+    .microscope-cad {
+        padding: clamp(56px, 5vw, 88px) clamp(24px, 3vw, 48px);
+    }
+
+    .microscope-cad__grid {
+        max-width: min(110rem, 100%);
+        gap: clamp(32px, 3.5vw, 56px);
+    }
+}
+
+@media (min-width: 1600px) {
+    .microscope .project-block {
+        max-width: min(84rem, 94vw);
+    }
+
+    .microscope-pieces {
+        grid-template-columns: minmax(24rem, 0.48fr) minmax(0, 0.52fr);
+    }
+
+    .microscope-focus,
+    .microscope-capture {
+        grid-template-columns: minmax(0, 0.52fr) minmax(24rem, 0.48fr);
+    }
+
+    /* Scale continuously from 1600 → large monitors (was stuck on floor too long) */
+    .microscope-intro__accent {
+        width: clamp(46rem, 170vw - 124rem, 110rem);
+        margin-top: calc(-24rem - 10vw);
+        margin-right: calc(-8vw - max(0px, (100vw - 84rem) / 2));
+        z-index: 0;
+    }
+}
+
+/* True large-monitor: copy aligns to page margins; cyanotype keeps scaling up */
+@media (min-width: 1920px) {
+    .microscope-intro {
+        max-width: min(84rem, 94vw);
+        margin-inline: auto;
+        padding: 0 var(--page-gutter-wide) var(--space-2);
+        box-sizing: border-box;
+        overflow: visible;
+    }
+
+    .microscope-intro__right {
+        align-items: flex-end;
+        overflow: visible;
+    }
+
+    .microscope-tagline {
+        width: min(100%, 34rem);
+        max-width: 34rem;
+    }
+
+    .microscope-intro__body {
+        width: min(100%, 26rem);
+        max-width: 26rem;
+        margin-left: 0;
+    }
+
+    .microscope-intro__casing {
+        max-width: 40rem;
+    }
+
+    .microscope-intro__accent {
+        width: clamp(80rem, 180vw - 140rem, 120rem);
+        margin-top: calc(-36rem - 10vw);
+        margin-right: calc(-1 * var(--page-gutter-wide) - max(0px, (100vw - 84rem) / 2) - 8vw);
+        z-index: 0;
+    }
+
+    .microscope-full {
+        padding-top: 0;
+        margin-top: calc(-1 * var(--space-3));
+    }
+}

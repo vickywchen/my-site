@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Fustat:wght@200;300;400;500;600;700&family=Reenie+Beanie&display=swap");
+
+/*
+  Visual system — sourced from Recipe Camera project type + spacing.
+  Redefine tokens at breakpoints; components consume var(--*).
+*/
+:root {
+    /* Fonts — sitewide Fustat; script accent only for “Not Work” */
+    --font-display: "Fustat", sans-serif;
+    --font-body: "Fustat", sans-serif;
+    --font-ui: "Fustat", sans-serif;
+    --font-script: "Reenie Beanie", cursive;
+
+    /* Color */
+    --color-text: #000;
+    --color-muted: rgba(0, 0, 0, 0.55);
+    --color-caption: rgba(0, 0, 0, 0.45);
+    --color-bg: #fff;
+    --color-placeholder: rgba(0, 0, 0, 0.06);
+
+    /* Spacing scale */
+    --space-1: 8px;
+    --space-2: 16px;
+    --space-3: 24px;
+    --space-4: 32px;
+    --space-5: 40px;
+    --space-6: 48px;
+    --space-7: 64px;
+    --space-8: 80px;
+    --space-9: 120px;
+
+    /* Page gutters — fluid, modest caps; content max stops blow-up on wide screens */
+    --page-gutter: clamp(24px, 5vw, 36px);
+    --page-gutter-wide: clamp(24px, 6vw, 36px);
+    --page-gutter-hero: clamp(24px, 5vw, 36px);
+    --page-gutter-intro-end: 0px;
+    --content-max: 100vw;
+    /* Matches side space from centered max-width blocks (0 until content is capped) */
+    --content-inline-inset: 0px;
+    --content-pad: var(--page-gutter-wide);
+    --section-pad-y: 48px;
+    --section-pad-y-end: 80px;
+    --gap-stack: 24px;
+    --gap-split: 32px;
+    --gap-split-lg: 64px;
+    --gap-figure: 10px;
+    --gap-ui: 16px;
+
+    /* Type: display (project / page title) */
+    --text-display-size: 32px;
+    --text-display-weight: 700;
+    --text-display-lh: 1.1;
+    --text-display-tracking: -0.8px;
+
+    /* Type: tagline (light subheading) */
+    --text-tagline-size: clamp(2.25rem, 5vw, 2.75rem);
+    --text-tagline-weight: 200;
+    --text-tagline-lh: 1.25;
+    --text-tagline-tracking: -0.03em;
+
+    /* Type: body */
+    --text-body-size: 1.3125rem;
+    --text-body-weight: 300;
+    --text-body-lh: 1.625;
+    --text-body-tracking: -0.01em;
+    --text-body-strong: 500;
+
+    /* Type: meta (small labels) */
+    --text-meta-size: 15px;
+    --text-meta-weight: 400;
+    --text-meta-lh: 1.45;
+    --text-meta-tracking: -0.07px;
+
+    /* Type: caption */
+    --text-caption-size: 17px;
+    --text-caption-weight: 500;
+    --text-caption-lh: 1.4;
+    --text-caption-tracking: -0.02em;
+
+    /* Breakpoint reference (docs only — media queries use literal px) */
+    --bp-tablet: 800px;
+    --bp-desktop: 1280px;
+}
+
+@media (min-width: 800px) {
+    :root {
+        --page-gutter: clamp(32px, 4.5vw, 56px);
+        --page-gutter-wide: clamp(32px, 4.5vw, 56px);
+        --page-gutter-hero: clamp(32px, 4.5vw, 56px);
+        --page-gutter-intro-end: 0px;
+        --content-max: min(68rem, 94vw);
+        --content-inline-inset: max(0px, calc((100vw - min(68rem, 94vw)) / 2));
+        --content-pad: calc(var(--content-inline-inset) + var(--page-gutter-wide));
+        --section-pad-y: clamp(32px, 4vw, 48px);
+        --section-pad-y-end: clamp(64px, 8vw, 120px);
+        --gap-stack: clamp(24px, 3vw, 40px);
+        --gap-split: clamp(32px, 4vw, 48px);
+        --gap-ui: clamp(16px, 2vw, 24px);
+
+        --text-display-size: clamp(36px, 4vw, 52px);
+        --text-display-tracking: -1.2px;
+
+        --text-tagline-size: clamp(2.1rem, 3.2vw, 2.75rem);
+        --text-tagline-lh: 1.35;
+        --text-tagline-tracking: -0.03em;
+
+        --text-body-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+        --text-body-lh: 1.55;
+        --text-body-tracking: -0.01em;
+
+        --text-meta-size: 15px;
+        --text-meta-weight: 400;
+
+        --text-caption-size: 17px;
+        --text-caption-weight: 500;
+    }
+}
+
+@media (min-width: 1280px) {
+    :root {
+        /* Wide content, tight gutters — fills large monitors instead of tiny centered column */
+        --page-gutter: clamp(40px, 3vw, 64px);
+        --page-gutter-wide: clamp(40px, 3vw, 64px);
+        --page-gutter-hero: clamp(40px, 3vw, 56px);
+        --page-gutter-intro-end: 0px;
+        --content-max: min(100rem, 92vw); /* ~1600px, or 92% of viewport */
+        --content-inline-inset: max(0px, calc((100vw - min(100rem, 92vw)) / 2));
+        --content-pad: calc(var(--content-inline-inset) + var(--page-gutter-wide));
+        --section-pad-y: clamp(40px, 3.5vw, 56px);
+        --section-pad-y-end: 80px;
+        --gap-stack: clamp(32px, 3vw, 48px);
+        --gap-split: clamp(48px, 5vw, 72px);
+        --gap-ui: clamp(20px, 2.2vw, 32px);
+
+        --text-display-size: clamp(44px, 3.2vw, 56px);
+        --text-display-tracking: -1.2px;
+
+        --text-tagline-size: clamp(2.5rem, 1.8rem + 1.1vw, 3.25rem);
+        --text-tagline-lh: 1.25;
+        --text-tagline-tracking: -0.03em;
+
+        --text-body-size: clamp(1.35rem, 1.05rem + 0.45vw, 1.625rem);
+        --text-body-lh: 1.625;
+        --text-body-tracking: -0.01em;
+
+        --text-meta-size: 16px;
+        --text-meta-weight: 400;
+        --text-caption-size: 18px;
+        --text-caption-weight: 500;
+    }
+}
+
+body, html {
+    margin: 0;
+    font-family: var(--font-body);
+    background: var(--color-bg);
+    color: var(--color-text);
+}
+
+/* Shared type utilities (Recipe Camera scale) */
+.type-display {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: var(--text-display-weight);
+    font-size: var(--text-display-size);
+    line-height: var(--text-display-lh);
+    letter-spacing: var(--text-display-tracking);
+    color: var(--color-text);
+}
+
+.type-tagline {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: var(--text-tagline-weight);
+    font-size: var(--text-tagline-size);
+    line-height: var(--text-tagline-lh);
+    letter-spacing: var(--text-tagline-tracking);
+    color: var(--color-text);
+}
+
+.type-body {
+    margin: 0;
+    font-family: var(--font-body);
+    font-weight: var(--text-body-weight);
+    font-size: var(--text-body-size);
+    line-height: var(--text-body-lh);
+    letter-spacing: var(--text-body-tracking);
+    color: var(--color-muted);
+}
+
+.type-meta {
+    margin: 0;
+    font-family: var(--font-body);
+    font-weight: var(--text-meta-weight);
+    font-size: var(--text-meta-size);
+    line-height: var(--text-meta-lh);
+    letter-spacing: var(--text-meta-tracking);
+    color: var(--color-muted);
+}
+
+.type-caption {
+    margin: 0;
+    font-family: var(--font-body);
+    font-weight: var(--text-caption-weight);
+    font-size: var(--text-caption-size);
+    line-height: var(--text-caption-lh);
+    letter-spacing: var(--text-caption-tracking);
+    color: var(--color-caption);
+}

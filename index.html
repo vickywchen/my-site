@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <script>
+    (function () {
+        var p = location.pathname;
+        var base = (p === "/my-site" || p.indexOf("/my-site/") === 0) ? "/my-site/" : "/";
+        document.write('<base href="' + base + '">');
+    })();
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vicky Chen</title>
+    <link rel="stylesheet" href="css/style.css?v=83">
+</head>
+<body>
+
+    <div id="site-header"></div>
+    <script src="js/load-header.js?v=3" defer></script>
+
+    <main class="home">
+        <section id="gallery" class="home-gallery" data-home-gallery aria-label="Photo gallery">
+            <div class="home-gallery__pin">
+                <ul class="home-gallery__list">
+                    <li class="home-gallery__item">
+                        <img src="images/home/alphabet.png" alt="" />
+                    </li>
+                    <li class="home-gallery__item">
+                        <img src="images/home/microscope.png" alt="" />
+                    </li>
+                    <li class="home-gallery__item">
+                        <img src="images/home/clips.png" alt="" />
+                    </li>
+                    <li class="home-gallery__item">
+                        <img src="images/home/recipe.png" alt="" />
+                    </li>
+                    <li class="home-gallery__item">
+                        <img src="images/home/cyanotype.jpeg?v=2" alt="" />
+                    </li>
+                    <li class="home-gallery__item">
+                        <img src="images/home/bunny.JPG" alt="" />
+                    </li>
+                    <li class="home-gallery__item">
+                        <img src="images/home/heads.PNG" alt="" />
+                    </li>
+                    <li class="home-gallery__item">
+                        <img src="images/home/spring.png" alt="" />
+                    </li>
+                    <li class="home-gallery__item home-gallery__item--white">
+                        <img src="images/home/brassrat.png" alt="" />
+                    </li>
+                </ul>
+            </div>
+            <p class="home-gallery__hint">Scroll to browse</p>
+        </section>
+    </main>
+
+    <script src="js/home-gallery-scroll.js?v=3" defer></script>
+</body>
+</html>

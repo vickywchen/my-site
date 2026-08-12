@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <script>
+    (function () {
+        var p = location.pathname;
+        var base = (p === "/my-site" || p.indexOf("/my-site/") === 0) ? "/my-site/" : "/";
+        document.write('<base href="' + base + '">');
+    })();
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microview: Analog Microscope Camera — Vicky Chen</title>
+    <link rel="stylesheet" href="css/style.css?v=122">
+</head>
+<body>
+
+    <div id="site-header"></div>
+    <script src="js/load-header.js?v=3" defer></script>
+
+    <main class="project microscope">
+        <header class="project-hero microscope-hero">
+            <h1 class="project-hero__title">Microview: Analog Microscope Camera</h1>
+            <div class="microscope-hero__meta">
+                <p class="microscope-meta">for 4.053 &mdash; Objects and Interaction</p>
+                <p class="microscope-meta">with Kayla Han</p>
+            </div>
+        </header>
+
+        <section class="microscope-intro" aria-labelledby="microscope-intro-heading">
+            <div class="microscope-intro__left">
+                <figure class="project-figure microscope-intro__hero">
+                    <img src="media/projects/microview/hero1.png" alt="Open wooden Microview enclosure showing the rack-and-pinion stage." />
+                </figure>
+                <p class="project-body microscope-intro__casing">The device features a wooden outer casing inspired by the aesthetic of antique brass-and-wood microscopes, combined with 3D-printed components. The door allows easy internal access to swap slides and swap sensitive media without disturbing the light seal.</p>
+            </div>
+            <div class="microscope-intro__right">
+                <h2 class="microscope-tagline" id="microscope-intro-heading">Seeing beyond the microscopic.</h2>
+                <p class="project-body microscope-intro__body">Inspired by the mechanisms of a microscope, this &ldquo;camera&rdquo; captures a magnified image of a small object on cyanotype. We explore tiny worlds, not just how they look, but the mystery beyond visibility itself.</p>
+                <figure class="project-figure microscope-intro__accent">
+                    <img src="media/projects/microview/hero2.png" alt="Circular cyanotype micrograph with a branching white structure." />
+                </figure>
+            </div>
+        </section>
+
+        <div class="project-blocks">
+            <section class="project-block microscope-full">
+                <figure class="project-figure">
+                    <img src="media/projects/microview/row1.png" alt="Three views of the Microview prototype: three-quarter, open interior, and side profile." />
+                </figure>
+            </section>
+
+            <section class="project-block project-block--split microscope-focus">
+                <figure class="project-figure microscope-focus__media">
+                    <video
+                        class="microscope-focus__video"
+                        src="media/projects/microview/focus.mp4?v=2"
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        webkit-playsinline
+                        preload="auto"
+                        aria-label="Focus knob adjusting the Microview stage."
+                    ></video>
+                </figure>
+                <div class="project-block__text">
+                    <p class="project-body">Inside, the rack-and-pinion enables focus adjustments via a side-mounted knob that shifts the lens vertically. A dedicated slot secures standard specimen slides directly within the focal plane.</p>
+                </div>
+            </section>
+
+            <section class="project-block microscope-cad" aria-label="CAD diagrams">
+                <div class="microscope-cad__grid">
+                    <figure class="project-figure microscope-cad__item">
+                        <img src="media/projects/microview/cad1.png" alt="Exploded CAD diagram of the Microview mechanical parts." />
+                    </figure>
+                    <figure class="project-figure microscope-cad__item">
+                        <img src="media/projects/microview/cad2.png" alt="Front, side, and isometric CAD views of the rack-and-pinion assembly." />
+                    </figure>
+                </div>
+                <p class="project-caption microscope-cad__caption">CAD of the interior mechanisms</p>
+            </section>
+
+            <section class="project-block project-block--split microscope-pieces">
+                <div class="project-block__text">
+                    <p class="project-body">We created multiple test prints and tweaks to get the gears fitting smoothly in real life compared to the 3D model. On the printmaking side, we trialed different UV light intensities and exposure times to produce crisp cyanotype prints.</p>
+                </div>
+                <figure class="project-figure">
+                    <img src="media/projects/microview/pieces.png" alt="Layout of 3D-printed gears, racks, and brackets for the Microview." />
+                    <figcaption class="project-caption">Test prints of the rack and pinion</figcaption>
+                </figure>
+            </section>
+
+            <section class="project-block microscope-prints">
+                <figure class="project-figure microscope-prints__wide">
+                    <img src="media/projects/microview/print2.png" alt="Row of cyanotype exposure tests labeled by exposure time." />
+                </figure>
+                <figure class="project-figure microscope-prints__wide">
+                    <img src="media/projects/microview/print3.png" alt="Additional cyanotype exposure sequence across timed UV tests." />
+                </figure>
+            </section>
+
+            <section class="project-block project-block--split microscope-capture">
+                <figure class="project-figure">
+                    <img src="media/projects/microview/print1.png" alt="Side-by-side cyanotype prints comparing focused and soft exposures." />
+                    <figcaption class="project-caption">Focused and unfocused prints</figcaption>
+                </figure>
+                <div class="project-block__text">
+                    <p class="project-body">To &ldquo;capture&rdquo; the image, a UV light source shines downward through the specimen slide and focusing lens. The magnified image is projected directly onto light-sensitive cyanotype paper placed at the base.</p>
+                </div>
+            </section>
+
+            <p class="project-stub__back microscope-back"><a href="work.html">&larr; Back to work</a></p>
+        </div>
+    </main>
+
+    <script src="js/autoplay-loop.js?v=1" defer></script>
+</body>
+</html>

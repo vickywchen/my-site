@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <script>
+    (function () {
+        var p = location.pathname;
+        var base = (p === "/my-site" || p.indexOf("/my-site/") === 0) ? "/my-site/" : "/";
+        document.write('<base href="' + base + '">');
+    })();
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not Work — Vicky Chen</title>
+    <link rel="stylesheet" href="css/style.css?v=88">
+</head>
+<body>
+
+    <div id="site-header"></div>
+    <script src="js/load-header.js?v=3" defer></script>
+    <script src="js/not-work-gallery.js?v=2" defer></script>
+
+    <main class="not-work">
+        <section class="not-work-gallery" aria-label="Not work">
+            <ul class="not-work-gallery__list">
+                <li class="not-work-gallery__item">
+                    <img src="images/notwork/IMG_0124.PNG" alt="" />
+                </li>
+                <li class="not-work-gallery__item">
+                    <img src="images/notwork/bunny.JPG" alt="" />
+                </li>
+                <li class="not-work-gallery__item">
+                    <img src="images/notwork/Chen_Vicky_SI_Masterfile_Habits.jpg" alt="" />
+                </li>
+                <li class="not-work-gallery__item">
+                    <img src="images/notwork/Chen_Vicky_SI_Masterfile_Introspection.png" alt="" />
+                </li>
+                <li class="not-work-gallery__item">
+                    <img src="images/notwork/IMG_0004.jpg?v=2" alt="" />
+                </li>
+                <li class="not-work-gallery__item">
+                    <img src="images/notwork/IMG_0125.PNG" alt="" />
+                </li>
+                <li class="not-work-gallery__item">
+                    <img src="images/notwork/IMG_0742.jpg?v=2" alt="" />
+                </li>
+                <li class="not-work-gallery__item">
+                    <img src="images/notwork/IMG_1409.jpg?v=2" alt="" />
+                </li>
+                <li class="not-work-gallery__item">
+                    <img src="images/notwork/alphabet.png" alt="" />
+                </li>
+                <li class="not-work-gallery__item">
+                    <img src="images/notwork/cyanotype.jpeg?v=2" alt="" />
+                </li>
+            </ul>
+        </section>
+    </main>
+
+</body>
+</html>

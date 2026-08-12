@@ -1,0 +1,204 @@
+/* —— Work page —— */
+.work {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.work-spacer {
+    display: block;
+    width: 100%;
+    height: 44px;
+    flex-shrink: 0;
+}
+
+.work-section {
+    width: 100%;
+}
+
+.work-section__list {
+    list-style: none;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+    width: 100%;
+    max-width: min(48rem, 94vw);
+    padding: var(--space-4) var(--page-gutter) var(--space-5);
+    box-sizing: border-box;
+}
+
+.work-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    align-items: flex-start;
+    width: 100%;
+    min-width: 0;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.work-card__link {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    align-items: flex-start;
+    width: 100%;
+    color: inherit;
+    text-decoration: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.work-card__link:hover .work-card__title,
+.work-card__link:focus-visible .work-card__title {
+    text-decoration: underline;
+}
+
+.work-card__link:focus-visible {
+    outline: 2px solid var(--color-text);
+    outline-offset: 4px;
+}
+
+.work-card__image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 552 / 414;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.work-card__image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.work-card__image--crop {
+    overflow: hidden;
+}
+
+.work-card__img--offset {
+    width: 133.34%;
+    height: 100%;
+    left: -18.64%;
+    top: 0;
+    max-width: none;
+}
+
+.work-card__meta {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 100%;
+    gap: var(--space-2);
+    word-break: break-word;
+}
+
+.work-card__title {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 1.2;
+    letter-spacing: -0.34px;
+    color: var(--color-text);
+}
+
+.work-card__year {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.45;
+    letter-spacing: -0.08px;
+    color: var(--color-muted);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* Tablet: 800px–1279px */
+@media (min-width: 800px) {
+    .work-spacer {
+        height: 60px;
+    }
+
+    .work-section__list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-5) var(--space-4);
+        max-width: min(84rem, 94vw);
+        padding: var(--space-6) var(--space-7) var(--space-7);
+    }
+
+    .work-card {
+        gap: var(--space-3);
+    }
+
+    .work-card__link {
+        gap: var(--space-3);
+    }
+
+    .work-card__title {
+        font-size: 19px;
+        letter-spacing: -0.38px;
+    }
+
+    .work-card__year {
+        font-size: 17px;
+        letter-spacing: -0.09px;
+    }
+}
+
+/* Desktop: 1280px+ */
+@media (min-width: 1280px) {
+    .work-spacer {
+        height: var(--space-7);
+    }
+
+    .work-section__list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: var(--space-6) var(--space-5);
+        max-width: min(120rem, 94vw);
+        padding: var(--space-6) var(--page-gutter-hero) var(--space-8);
+    }
+
+    .work-card {
+        gap: var(--space-3);
+    }
+
+    .work-card__link {
+        gap: var(--space-3);
+    }
+
+    .work-card__title {
+        font-size: 22px;
+        letter-spacing: -0.44px;
+    }
+
+    .work-card__year {
+        font-size: 18px;
+        letter-spacing: -0.09px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .work-section__list {
+        max-width: min(136rem, 96vw);
+        gap: var(--space-7) var(--space-6);
+        padding-left: var(--page-gutter-hero);
+        padding-right: var(--page-gutter-hero);
+    }
+
+    .work-card__title {
+        font-size: 24px;
+        letter-spacing: -0.48px;
+    }
+
+    .work-card__year {
+        font-size: 18px;
+    }
+}

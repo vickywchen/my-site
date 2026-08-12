@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <script>
+    (function () {
+        var p = location.pathname;
+        var base = (p === "/my-site" || p.indexOf("/my-site/") === 0) ? "/my-site/" : "/";
+        document.write('<base href="' + base + '">');
+    })();
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackMIT — Vicky Chen</title>
+    <link rel="stylesheet" href="css/style.css?v=37">
+</head>
+<body>
+
+    <div id="site-header"></div>
+    <script src="js/load-header.js?v=3" defer></script>
+
+    <main class="project project--stub">
+        <header class="project-hero">
+            <h1 class="project-hero__title">HackMIT</h1>
+        </header>
+        <section class="project-stub">
+            <p class="project-body">Project page coming soon.</p>
+            <p class="project-stub__back"><a href="work.html">&larr; Back to work</a></p>
+        </section>
+    </main>
+
+</body>
+</html>
