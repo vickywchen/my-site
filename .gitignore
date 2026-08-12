@@ -5,3 +5,5 @@ media/projects/recipe-camera/comp-1.original.mp4
 dist/
 node_modules/
 .wrangler/
+images/_precompress/
+_compress_renames.txt

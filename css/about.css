@@ -67,6 +67,17 @@
     margin-top: 1.45em;
 }
 
+.about-feature__email a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+}
+
+.about-feature__email a:hover,
+.about-feature__email a:focus-visible {
+    opacity: 0.75;
+}
+
 /* Wide enough for a comfortable side-by-side pair */
 @media (min-width: 960px) {
     .about-intro {
