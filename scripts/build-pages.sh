@@ -21,3 +21,11 @@ tar -C . \
   --exclude='./scripts' \
   --exclude='./wrangler.toml' \
   -cf - . | tar -C dist -xf -
+
+# Workers static assets ignore rules (applied inside the assets dir)
+cat > dist/.assetsignore << 'EOF'
+**/.DS_Store
+**/.git
+**/node_modules
+EOF
+
